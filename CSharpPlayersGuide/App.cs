@@ -1,6 +1,8 @@
 ﻿using CSharpPlayersGuide.Exercises.Buying_Inventory;
 using CSharpPlayersGuide.Exercises.Consolas_and_Telim;
+using CSharpPlayersGuide.Exercises.Count_Down;
 using CSharpPlayersGuide.Exercises.Hello_World;
+using CSharpPlayersGuide.Exercises.Hunting_The_Manticore;
 using CSharpPlayersGuide.Exercises.Repairing_The_Clocktower;
 using CSharpPlayersGuide.Exercises.The_Defence_Of_Consolas;
 using CSharpPlayersGuide.Exercises.The_Dominion_Of_Kings;
@@ -46,7 +48,9 @@ namespace CSharpPlayersGuide
                 new ThePrototype("The Prototype"),
                 new TheMagicCannon("The Magic Cannon"),
                 new TheReplicatorOfDto("The Replicator of D'To"),
-                new TheLawsOfFreach("The Laws of Freach")
+                new TheLawsOfFreach("The Laws of Freach"),
+                new Countdown("Countdown"),
+                new HuntingTheManticore("Hunting the Manticore")
             };
             exercises = exercises.OrderBy(x => x.Name).ToList();
         }
