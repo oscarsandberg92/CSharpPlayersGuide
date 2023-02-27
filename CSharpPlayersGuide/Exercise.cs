@@ -9,6 +9,9 @@
             Name = name;
         }
 
-        public virtual void Run() { }
+        public virtual void Run() 
+        {
+            HandyConsole.WaitForUser("Not yet implemented..", ConsoleColor.DarkGray);
+        }
     }
 }

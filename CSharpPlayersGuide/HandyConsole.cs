@@ -12,6 +12,13 @@ namespace CSharpPlayersGuide
         // Fix the GetInputClasses so that it has a bool that sets if the console should be cleared or not.
         //      Current problem is that if the wrong input is entered the SetCursorPositions will be messed up.
 
+        private static void ClearLine(int left, int top, int length)
+        {
+            Console.SetCursorPosition(left, top);
+            Console.Write("".PadRight(length));
+            Console.SetCursorPosition(left, top);
+        }
+
         private static ConsoleColor GetCurrentBackgroundColor() => Console.BackgroundColor;
         private static ConsoleColor GetCurrentForegroundColor() => Console.ForegroundColor;
 
@@ -72,13 +79,12 @@ namespace CSharpPlayersGuide
         /// <returns></returns>
         public static int GetInputAsInt(string message, bool clearBefore = false, bool clearAfter = false, int minValue = int.MinValue, int maxValue = int.MaxValue)
         {
-
-            if (clearBefore) Console.Clear();
-            Console.Write($"{message}");
             string? response = "";
             int result;
-
-            int currentRow = Console.CursorTop;
+            int currentRow;
+            
+            if (clearBefore) Console.Clear();
+            Console.Write($"{message}");
 
             while (true)
             {
@@ -118,17 +124,11 @@ namespace CSharpPlayersGuide
                     }
                 }
                 int inputRow = Console.CursorTop - 2;
-                int lengthToClear = response == null ? 2 : response.Length;
+                int lengthToClear = Console.BufferWidth - message.Length;
                 ClearLine(message.Length, inputRow, lengthToClear);
             }
         }
 
-        private static void ClearLine(int left, int top, int length)
-        {
-            Console.SetCursorPosition(left, top);
-            Console.Write("".PadRight(length));
-            Console.SetCursorPosition(left, top);
-        }
 
         /// <summary>
         /// Prompts the user to enter a value of type string. Stays in the method until a valid input as been entered and then returns the value
