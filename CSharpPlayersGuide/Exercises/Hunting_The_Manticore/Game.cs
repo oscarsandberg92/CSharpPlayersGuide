@@ -13,9 +13,9 @@
         {
             Round = 1;
             CityMaxHealth = 15;
-            CityCurrentHealth = 15;
-            ManticoreMaxHealth = 15;
-            ManticoreCurrentHealth = 15;
+            CityCurrentHealth = CityMaxHealth;
+            ManticoreMaxHealth = 10;
+            ManticoreCurrentHealth = ManticoreMaxHealth;
         }
 
         public void PlayRound()
@@ -31,9 +31,8 @@
             }
 
             else
-            {
                 HandyConsole.WriteLine(GetShotInfo(playerGuess),ConsoleColor.Yellow);
-            }
+
             HandyConsole.WriteLine("".PadRight(40,'-'));
             
             CityCurrentHealth--;

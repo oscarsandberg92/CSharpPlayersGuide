@@ -26,8 +26,10 @@ namespace CSharpPlayersGuide.Exercises.Hunting_The_Manticore
                     game.PlayRound();
                 }
 
-                if (game.ManticoreCurrentHealth < 1) HandyConsole.WriteLine("Player won", ConsoleColor.Green);
-                else HandyConsole.WriteLine("The Manticore won.", ConsoleColor.Red);
+                if (game.ManticoreCurrentHealth < 1) 
+                    HandyConsole.WriteLine("Player won", ConsoleColor.Green);
+                else 
+                    HandyConsole.WriteLine("The Manticore won.", ConsoleColor.Red);
 
                 HandyConsole.WaitForUser("\nPress any key to continue..", ConsoleColor.DarkGray);
                 
