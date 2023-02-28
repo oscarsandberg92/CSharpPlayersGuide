@@ -19,7 +19,8 @@ namespace CSharpPlayersGuide.Exercises.Hunting_The_Manticore
             {
                 var game = new Game();
 
-                game.ManticoreDistance = HandyConsole.GetInputAsInt("Player 1, enter how far away you would like to station the Manticore: ", clearAfter: true);
+                game.ManticoreDistance = HandyConsole.GetInputAsInt("Player 1, enter how far away you would like to station the Manticore [1-100]: ", 
+                    clearAfter: true, minValue:1, maxValue: 100);
 
                 while (game.CityCurrentHealth > 0 && game.ManticoreCurrentHealth > 0)
                 {

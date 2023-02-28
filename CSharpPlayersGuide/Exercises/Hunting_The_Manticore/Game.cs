@@ -34,9 +34,12 @@
                 HandyConsole.WriteLine(GetShotInfo(playerGuess),ConsoleColor.Yellow);
 
             HandyConsole.WriteLine("".PadRight(40,'-'));
-            
-            CityCurrentHealth--;
-            Round++;
+
+            if (ManticoreCurrentHealth > 0)
+            {
+                CityCurrentHealth--;
+                Round++;
+            }
         }
 
         private string GetShotInfo(int playerGuess)
