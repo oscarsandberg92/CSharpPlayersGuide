@@ -17,6 +17,7 @@ using CSharpPlayersGuide.Exercises.The_Replicator_Of_Dto;
 using CSharpPlayersGuide.Exercises.The_Thing_Namer;
 using CSharpPlayersGuide.Exercises.The_Triangle_Farmer;
 using CSharpPlayersGuide.Exercises.The_Variable_Shop;
+using CSharpPlayersGuide.Exercises.Vin_Fletchers_Arrows;
 using CSharpPlayersGuide.Exercises.Watchtower;
 using CSharpPlayersGuide.Exercises.What_Comes_next;
 using System.Net.NetworkInformation;
@@ -55,7 +56,9 @@ namespace CSharpPlayersGuide
                 new Countdown("Countdown"),
                 new HuntingTheManticore("Hunting the Manticore"),
                 new SimulasTest("Simula's Test"),
-                new SimulasSoup("Simula's Soup")
+                new SimulasSoup("Simula's Soup"),
+                new VinFletchersArrows("Vin Fletcher's Arrows"),
+                new VinFletchersArrows("Arrow Factories")
             };
             exercises = exercises.OrderBy(x => x.Name).ToList();
         }
