@@ -28,9 +28,9 @@ namespace CSharpPlayersGuide.Exercises.Hunting_The_Manticore
                 }
 
                 if (game.ManticoreCurrentHealth < 1) 
-                    HandyConsole.WriteLine("Player won", ConsoleColor.Green);
+                    HandyConsole.WriteLine($"Player 2 [The City] won in {game.Round} rounds.", ConsoleColor.Green);
                 else 
-                    HandyConsole.WriteLine("The Manticore won.", ConsoleColor.Red);
+                    HandyConsole.WriteLine($"Player 1 [The Manticore] won in {game.Round} rounds.", ConsoleColor.Red);
 
                 HandyConsole.WaitForUser("\nPress any key to continue..", ConsoleColor.DarkGray);
                 

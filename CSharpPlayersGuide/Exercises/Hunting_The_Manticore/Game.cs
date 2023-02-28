@@ -21,7 +21,7 @@
         public void PlayRound()
         {
             PrintStatus();   
-            int playerGuess = HandyConsole.GetInputAsInt("Enter the desired cannon range: ");
+            int playerGuess = HandyConsole.GetInputAsInt("Enter the desired cannon range: ", minValue: 1, maxValue: 100);
 
             bool isHit = CheckIfHit(playerGuess);
             if (isHit)
@@ -34,10 +34,10 @@
                 HandyConsole.WriteLine(GetShotInfo(playerGuess),ConsoleColor.Yellow);
 
             HandyConsole.WriteLine("".PadRight(40,'-'));
+            CityCurrentHealth--;
 
-            if (ManticoreCurrentHealth > 0)
+            if (ManticoreCurrentHealth > 0 && CityCurrentHealth > 0)
             {
-                CityCurrentHealth--;
                 Round++;
             }
         }
