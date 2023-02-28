@@ -135,9 +135,11 @@ namespace CSharpPlayersGuide
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
-        public static string GetInputAsString(string message)
+        public static string GetInputAsString(string message, bool clearBefore = false, bool clearAfter = false)
         {
-            Console.Clear(); 
+            if(clearBefore) 
+                Console.Clear(); 
+
             Console.Write($"{message}");
             string response = "";
 
@@ -145,17 +147,20 @@ namespace CSharpPlayersGuide
             {
                 response = Console.ReadLine();
 
-                if (response == "") WriteLine("Input cannot be empty, please try again.", ConsoleColor.Red);
-                else if (response == null) WriteLine("Input cannot be null, please try again.", ConsoleColor.Red);
+                if (response == "") WriteLine("Input cannot be empty, please try again.".PadRight(Console.BufferWidth), ConsoleColor.Red);
+                else if (response == null) WriteLine("Input cannot be null, please try again.".PadRight(Console.BufferWidth), ConsoleColor.Red);
                 else
                 {
-                    Console.Clear();
+                    int currentRow = Console.CursorTop;
+                    ClearLine(0, currentRow, Console.BufferWidth);
+                    if (clearAfter)
+                        Console.Clear();
                     return response;
                 }
 
-                Console.SetCursorPosition(message.Length, 0);
-                Console.Write($"{"".PadRight(10)}");
-                Console.SetCursorPosition(message.Length, 0);
+                int inputRow = Console.CursorTop - 2;
+                int lengthToClear = Console.BufferWidth - message.Length;
+                ClearLine(message.Length, inputRow, lengthToClear);
             }
 
         }

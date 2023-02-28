@@ -4,6 +4,7 @@ using CSharpPlayersGuide.Exercises.Count_Down;
 using CSharpPlayersGuide.Exercises.Hello_World;
 using CSharpPlayersGuide.Exercises.Hunting_The_Manticore;
 using CSharpPlayersGuide.Exercises.Repairing_The_Clocktower;
+using CSharpPlayersGuide.Exercises.Simulas_Test;
 using CSharpPlayersGuide.Exercises.The_Defence_Of_Consolas;
 using CSharpPlayersGuide.Exercises.The_Dominion_Of_Kings;
 using CSharpPlayersGuide.Exercises.The_Four_Sisters_And_The_Duckbear;
@@ -17,6 +18,7 @@ using CSharpPlayersGuide.Exercises.The_Triangle_Farmer;
 using CSharpPlayersGuide.Exercises.The_Variable_Shop;
 using CSharpPlayersGuide.Exercises.Watchtower;
 using CSharpPlayersGuide.Exercises.What_Comes_next;
+using System.Net.NetworkInformation;
 using System.Reflection;
 
 
@@ -50,7 +52,8 @@ namespace CSharpPlayersGuide
                 new TheReplicatorOfDto("The Replicator of D'To"),
                 new TheLawsOfFreach("The Laws of Freach"),
                 new Countdown("Countdown"),
-                new HuntingTheManticore("Hunting the Manticore")
+                new HuntingTheManticore("Hunting the Manticore"),
+                new SimulasTest("Simula's Test")
             };
             exercises = exercises.OrderBy(x => x.Name).ToList();
         }
