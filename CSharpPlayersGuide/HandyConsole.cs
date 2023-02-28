@@ -313,7 +313,7 @@ namespace CSharpPlayersGuide
 
             WriteLine(message, textColor);
 
-            Console.ReadKey();
+            Console.ReadKey(true);
 
             if (clearAfter) Console.Clear();
 

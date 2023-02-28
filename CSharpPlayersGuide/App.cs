@@ -4,6 +4,7 @@ using CSharpPlayersGuide.Exercises.Count_Down;
 using CSharpPlayersGuide.Exercises.Hello_World;
 using CSharpPlayersGuide.Exercises.Hunting_The_Manticore;
 using CSharpPlayersGuide.Exercises.Repairing_The_Clocktower;
+using CSharpPlayersGuide.Exercises.Simulas_Soup;
 using CSharpPlayersGuide.Exercises.Simulas_Test;
 using CSharpPlayersGuide.Exercises.The_Defence_Of_Consolas;
 using CSharpPlayersGuide.Exercises.The_Dominion_Of_Kings;
@@ -53,7 +54,8 @@ namespace CSharpPlayersGuide
                 new TheLawsOfFreach("The Laws of Freach"),
                 new Countdown("Countdown"),
                 new HuntingTheManticore("Hunting the Manticore"),
-                new SimulasTest("Simula's Test")
+                new SimulasTest("Simula's Test"),
+                new SimulasSoup("Simula's Soup")
             };
             exercises = exercises.OrderBy(x => x.Name).ToList();
         }
